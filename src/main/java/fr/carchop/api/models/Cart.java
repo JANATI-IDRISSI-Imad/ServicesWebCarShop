@@ -3,8 +3,6 @@ package fr.carchop.api.models;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
-
 @Getter
 @Setter
 @ToString
@@ -19,7 +17,5 @@ public class Cart {
     @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     @JoinColumn(name="user_id", nullable=false)
     private User user;
-    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-    @JoinColumn(name="car_id", nullable=false)
-    private List<Car> cars;
+
 }
