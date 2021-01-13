@@ -18,4 +18,7 @@ public class Cart {
     @JoinColumn(name="user_id", nullable=false)
     private User user;
 
+    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+    @JoinColumn(name="car_id", nullable=false)
+    private Car car;
 }
