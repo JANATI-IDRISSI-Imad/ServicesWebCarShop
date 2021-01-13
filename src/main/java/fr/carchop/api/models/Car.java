@@ -2,10 +2,7 @@ package fr.carchop.api.models;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -20,4 +17,6 @@ public class Car {
 
     private String name;
     private String model;
+    @Column(name = "img", length = 1000000000)
+    private byte[] img;
 }
