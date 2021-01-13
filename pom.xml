@@ -48,6 +48,7 @@
 	<build>
 		<plugins>
 			<plugin>
+				<inherited>true</inherited>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
