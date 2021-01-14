@@ -7,6 +7,7 @@ import fr.carchop.api.services.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -26,5 +27,10 @@ public class CartControler {
     @PutMapping("/addCarToCart/{email}/{id_Car}")
     public boolean addCarToCart(@PathVariable String email,@PathVariable Long id_Car) {
         return cartService.addCarToCart(email,id_Car);
+    }
+
+    @GetMapping("/getCarFromCart/{id_cart}")
+    public List<Car> getCarFromCart(@PathVariable Long id_cart){
+        return cartService.getCarFromCart(id_cart);
     }
 }
