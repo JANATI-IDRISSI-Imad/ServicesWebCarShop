@@ -21,5 +21,8 @@ public class Car {
     private byte[] img;
     private double price;
     private String description;
+    @ManyToOne
+    @JoinColumn(name="cart_id", nullable=false)
+    private Cart cart;
 
 }
