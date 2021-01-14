@@ -19,17 +19,17 @@ public class CarController {
         return carService.getCarById(id);
     }
 
-    @GetMapping("/get/{name}")
+    @GetMapping("/getByName/{name}")
     public Optional<Car> getCarByName(@PathVariable String name){
         return carService.getCarByName(name);
     }
 
-    @GetMapping("get/{model}")
+    @GetMapping("getByModel/{model}")
     public Optional<Car> getCarByModel(@PathVariable String model){
         return carService.getCarByModel(model);
     }
 
-    @PostMapping("/add")
+    @PostMapping("/addCar")
     public void addCar(@RequestBody Car car){
         carService.addCar(car);
     }
