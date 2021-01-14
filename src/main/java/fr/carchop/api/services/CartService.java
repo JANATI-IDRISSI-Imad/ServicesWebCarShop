@@ -46,7 +46,7 @@ public class CartService {
         if (car.get()!=null&& cart.get()!=null){
             Cart cart1=cart.get();
             cart1.getCars().add(car.get());
-            cartDAO.save(cart.get());
+            cartDAO.save(cart1);
             return true;
         }
         return false;
