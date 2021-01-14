@@ -11,16 +11,17 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/Car")
+@RequestMapping("Car")
 public class CarController {
     @Autowired
     CarService carService;
 
     @GetMapping("/get/{id}")
     public Optional<Car> getCarById(@PathVariable Long id){
+        System.out.println("#######################"+id);
         return carService.getCarById(id);
     }
-    @GetMapping("/get/{email}")
+    @GetMapping("/getByEmail/{email}")
     public Optional<Car> getCarByName(@PathVariable String name){
         return carService.getCarByName(name);
     }

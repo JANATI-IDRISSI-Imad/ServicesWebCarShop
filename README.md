@@ -9,4 +9,4 @@ _________________User___________________________
 _________________Cart___________________________
 
 /Cart/getByEmailUser/{email}
-/gatTotalCart/{id}
+/Cart/gatTotalCart/{id}

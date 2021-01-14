@@ -20,6 +20,6 @@ public class Cart {
     @JoinColumn(name="user_id", nullable=false)
     private User user;
 
-    @OneToMany(mappedBy = "cart")
-    private List<Car> cars;
+    @OneToMany
+    public List<Car> cars;
 }

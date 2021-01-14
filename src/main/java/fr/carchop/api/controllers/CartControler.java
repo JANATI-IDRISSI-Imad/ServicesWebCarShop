@@ -5,10 +5,7 @@ import fr.carchop.api.models.Cart;
 import fr.carchop.api.repositories.CartDAO;
 import fr.carchop.api.services.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -25,5 +22,9 @@ public class CartControler {
     @GetMapping("/gatTotalCart/{id}")
     public Double gatTotalCart (@PathVariable Long id){
         return cartService.gatTotalCart(id);
+    }
+    @PutMapping("/addCarToCart/{email}/{id_Car}")
+    public boolean addCarToCart(@PathVariable String email,@PathVariable Long id_Car) {
+        return cartService.addCarToCart(email,id_Car);
     }
 }
