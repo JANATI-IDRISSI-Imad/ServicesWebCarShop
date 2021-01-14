@@ -11,8 +11,6 @@ _________________Cart___________________________
 /Cart/getByEmailUser/{email}
 /Cart/gatTotalCart/{id}
 /addCarToCart/{email}/{id_Car}
-
---------------Car-------------------------------
-/Car/get/{id}
-/Car/getByName/{name}
-/Car/getByModel/{model}
+/deleteCarFromCart/{email}/{id_Car}
+/clearCart/{email}
+/validateCart/{email}

@@ -10,6 +10,7 @@ import java.util.List;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode
 @Entity
 public class Cart {
     @Id
@@ -20,6 +21,6 @@ public class Cart {
     @JoinColumn(name="user_id", nullable=false)
     private User user;
 
-    @OneToMany
+    @ManyToMany
     public List<Car> cars;
 }

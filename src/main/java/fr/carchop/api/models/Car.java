@@ -9,7 +9,9 @@ import javax.persistence.*;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode
 @Entity
+
 public class Car {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)

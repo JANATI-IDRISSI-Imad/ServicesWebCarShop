@@ -18,9 +18,8 @@ public class UserController {
         return o;
     }
     @PostMapping("/add")
-    public  void addUser(@RequestBody User user){
-        System.out.println("###################"+user.toString());
-        userServise.addUser(user);
+    public  Boolean addUser(@RequestBody User user){
+        return userServise.addUser(user);
     }
 
     @GetMapping("/getByEmail/{email}")
