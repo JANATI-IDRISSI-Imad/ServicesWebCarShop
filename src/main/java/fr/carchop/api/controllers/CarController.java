@@ -20,12 +20,10 @@ public class CarController {
     }
 
     @GetMapping("/get/{name}")
-
-    @GetMapping("/getByEmail/{email}")
-
     public Optional<Car> getCarByName(@PathVariable String name){
         return carService.getCarByName(name);
     }
+
     @GetMapping("get/{model}")
     public Optional<Car> getCarByModel(@PathVariable String model){
         return carService.getCarByModel(model);
