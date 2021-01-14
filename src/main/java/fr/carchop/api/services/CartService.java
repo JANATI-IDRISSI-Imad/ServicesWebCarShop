@@ -43,8 +43,6 @@ public class CartService {
     public Boolean addCarToCart(String email, Long id){
         Optional<Cart> cart=getCartByUserEmail(email);
         Optional<Car>car=carDAO.findById(id);
-        System.out.println(car.get().toString());
-        System.out.println(cart.get().toString());
         if (car.get()!=null&& cart.get()!=null){
             Cart cart1=cart.get();
             cart1.getCars().add(car.get());
@@ -61,5 +59,36 @@ public class CartService {
         }
         return null;
 
+    }
+    public Boolean deleteCarFromCart(String email, Long id){
+        Optional<Cart> cart=getCartByUserEmail(email);
+        Optional<Car>car=carDAO.findById(id);
+        if (car.get()!=null&& cart.get()!=null){
+            Cart cart1=cart.get();
+            cart1.getCars().remove(car.get());
+            cartDAO.save(cart1);
+            return true;
+        }
+        return false;
+    }
+
+    public Boolean clearCart(String email){
+        Optional<Cart> cart=getCartByUserEmail(email);
+        if ( cart.get()!=null){
+            cart.get().getCars().clear();
+            cartDAO.save(cart.get());
+            return true;
+        }
+        return false;
+    }
+
+    public Boolean validateCart(String email){
+        Optional<Cart> cart=getCartByUserEmail(email);
+        if ( cart.get()!=null){
+            cart.get().getCars().clear();
+            cartDAO.save(cart.get());
+            return true;
+        }
+        return false;
     }
 }

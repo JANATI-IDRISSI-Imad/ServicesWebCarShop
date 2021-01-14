@@ -10,6 +10,7 @@ import java.util.List;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode
 @Entity
 public class Cart {
     @Id

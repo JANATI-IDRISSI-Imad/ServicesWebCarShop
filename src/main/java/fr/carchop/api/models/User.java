@@ -8,6 +8,7 @@ import javax.persistence.*;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode
 @Entity
 public class User {
     @Id
