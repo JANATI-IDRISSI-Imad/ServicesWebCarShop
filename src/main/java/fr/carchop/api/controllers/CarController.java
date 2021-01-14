@@ -15,7 +15,6 @@ public class CarController {
 
     @GetMapping("/get/{id}")
     public Optional<Car> getCarById(@PathVariable Long id){
-        System.out.println("#######################"+id);
         return carService.getCarById(id);
     }
 

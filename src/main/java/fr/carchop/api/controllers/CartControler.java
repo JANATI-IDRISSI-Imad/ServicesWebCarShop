@@ -24,7 +24,7 @@ public class CartControler {
     public Double gatTotalCart (@PathVariable Long id){
         return cartService.gatTotalCart(id);
     }
-    @PutMapping("/addCarToCart/{email}/{id_Car}")
+    @RequestMapping("/addCarToCart/{email}/{id_Car}")
     public boolean addCarToCart(@PathVariable String email,@PathVariable Long id_Car) {
         return cartService.addCarToCart(email,id_Car);
     }
