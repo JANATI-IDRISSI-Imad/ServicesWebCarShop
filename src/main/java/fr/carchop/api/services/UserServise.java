@@ -18,6 +18,7 @@ public class UserServise {
     public void addUser(User user){
         userDAO.save(user);
     }
+
     public Optional<User>getUserByEmail(String email){
         return userDAO.getUserByEmail(email);
     }

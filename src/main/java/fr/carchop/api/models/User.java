@@ -2,6 +2,7 @@ package fr.carchop.api.models;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -19,5 +20,7 @@ public class User {
     public long getId() {
         return id;
     }
+    @OneToMany(cascade = {CascadeType.ALL})
+    public List<Notification> notification;
 
 }
