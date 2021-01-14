@@ -42,6 +42,8 @@ public class CartService {
     public Boolean addCarToCart(String email, Long id){
         Optional<Cart> cart=getCartByUserEmail(email);
         Optional<Car>car=carDAO.findById(id);
+        System.out.println(car.get().toString());
+        System.out.println(cart.get().toString());
         if (car.get()!=null&& cart.get()!=null){
             Cart cart1=cart.get();
             cart1.getCars().add(car.get());

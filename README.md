@@ -10,3 +10,4 @@ _________________Cart___________________________
 
 /Cart/getByEmailUser/{email}
 /Cart/gatTotalCart/{id}
+/addCarToCart/{email}/{id_Car}
