@@ -19,8 +19,7 @@ public class Car {
 
     private String name;
     private String model;
-    @Column(name = "img", length = 1000000000)
-    private byte[] img;
+    private String img;
     private double price;
     private String description;
 
