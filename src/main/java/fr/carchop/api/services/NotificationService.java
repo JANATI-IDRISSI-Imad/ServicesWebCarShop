@@ -3,6 +3,7 @@ package fr.carchop.api.services;
 import fr.carchop.api.models.Notification;
 import fr.carchop.api.models.User;
 import fr.carchop.api.repositories.NotificationDao;
+import fr.carchop.api.repositories.UserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,8 @@ public class NotificationService {
     NotificationDao notificationDao;
     @Autowired
     UserServise userServise;
+    @Autowired
+    UserDAO userDAO;
     public List<Notification> getNotifByUser(String email){
        Optional<User> user = userServise.getUserByEmail(email);
        if(user.get() != null){
@@ -27,7 +30,7 @@ public class NotificationService {
         Optional<User> user = userServise.getUserByEmail(email);
         if(user.get() != null){
            user.get().notification.add(new Notification(Long.valueOf(0),"Felicitation,l'achat est bien effectue"));
-           userServise.addUser(user.get());
+           userDAO.save(user.get());
            return true;
         }
         return false;
