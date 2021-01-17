@@ -18,4 +18,5 @@ public class CarService {
     public Optional<Car>getCarByName(String name){return carDao.getCarByName(name);}
     public void addCar(Car car){carDao.save(car);}
     public Optional<Car>getCarByModel(String model){return carDao.getCarByModel(model);}
+    public Optional<Car>getCarByAdress(String adress){return carDao.getCarByAdress(adress);}
 }

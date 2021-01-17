@@ -28,6 +28,9 @@ public class CarController {
         return carService.getCarByModel(model);
     }
 
+    @GetMapping("getByAdress/{adress}")
+    public Optional<Car> getCarByAdress(@PathVariable String adress){ return carService.getCarByAdress(adress);}
+
     @PostMapping("/addCar")
     public void addCar(@RequestBody Car car){
         carService.addCar(car);

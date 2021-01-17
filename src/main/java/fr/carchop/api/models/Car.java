@@ -22,6 +22,7 @@ public class Car {
     private String img;
     private double price;
     private String description;
+    private String adress;
 
 
 }

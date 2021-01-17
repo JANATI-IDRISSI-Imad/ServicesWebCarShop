@@ -8,5 +8,5 @@ import java.util.Optional;
 public interface CarDao extends CrudRepository<Car, Long> {
     public Optional<Car> getCarByName(String name);
     public Optional<Car> getCarByModel(String model);
-
+    public Optional<Car> getCarByAdress(String adress);
 }
