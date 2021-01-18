@@ -23,3 +23,4 @@ _________________Car_____________________________
 /Car/getByModel/{model}
 /Car/getByAdress/{adress}
 /Car/getAllCars
+/Car/ad
