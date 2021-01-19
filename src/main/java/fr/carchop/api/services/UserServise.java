@@ -53,10 +53,10 @@ public class UserServise {
     }
 
 
-    public boolean passforget(String code,UserL userL){
+    public boolean passforget(String code, String email){
         try {
 
-            String email="Bonjour "+userL.getName() +"\n" +
+            String emailM="Bonjour " +"\n" +
                     "votre code de validation est : "+code+" \n" +
                     "Ce code est valable seulement 1 heures. Si vous ne réinitialisez pas votre mot de passe dans ce délai, vous devez demander un autre email de réinitialisation du mot de passe.\n" +
                     "\n" +
@@ -75,9 +75,9 @@ public class UserServise {
             props.put("mail.debug", "true");
             SimpleMailMessage message = new SimpleMailMessage();
             message.setFrom("noreplycarshopapp@gmail.com");
-            message.setTo(userL.getEmail());
+            message.setTo(email);
             message.setSubject("Réinitialiser le mot de passe");
-            message.setText(email);
+            message.setText(emailM);
             mailSender.send(message);
             return  true;
         }

@@ -35,8 +35,9 @@ public class UserController {
         return userServise.login(user);
     }
 
-    @PostMapping("/passforget/{code}")
-    public  Boolean passforget(@PathVariable String code, @RequestBody UserL userL){
-        return userServise.passforget(code,userL);
+    @RequestMapping("/passforget/{email}/{code}")
+    public  Boolean passforget(@PathVariable String code, @PathVariable String email){
+        return userServise.passforget(code,email);
     }
+
 }
