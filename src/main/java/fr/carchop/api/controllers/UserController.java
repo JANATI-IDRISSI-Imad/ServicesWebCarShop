@@ -39,5 +39,9 @@ public class UserController {
     public  Boolean passforget(@PathVariable String code, @PathVariable String email){
         return userServise.passforget(code,email);
     }
+    @RequestMapping("/changepassword/{email}/{pass}")
+    public  Boolean changepassword(@PathVariable String email, @PathVariable String pass){
+        return userServise.changepassword(email,pass);
+    }
 
 }

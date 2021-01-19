@@ -86,4 +86,20 @@ public class UserServise {
         }
         return false;
     }
+
+
+
+    public boolean changepassword(String email,String pass){
+        try{
+            Optional<User> user=getUserByEmail(email);
+            if(user.get()!=null){
+                user.get().setPassword(pass);
+                userDAO.save(user.get());
+            }
+        }
+        catch (Exception e){
+
+        }
+        return false;
+    }
 }
