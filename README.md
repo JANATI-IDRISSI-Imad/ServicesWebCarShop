@@ -14,3 +14,13 @@ _________________Cart___________________________
 /deleteCarFromCart/{email}/{id_Car}
 /clearCart/{email}
 /validateCart/{email}
+
+
+_________________Car_____________________________
+
+/Car/get/{id}
+/Car/getByName/{name}
+/Car/getByModel/{model}
+/Car/getByAdress/{adress}
+/Car/getAllCars
+/Car/ad
