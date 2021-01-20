@@ -23,6 +23,9 @@ public class UserController {
         return userServise.addUser(user);
     }
 
+    @GetMapping("/getUserByName/{name}")
+    public Optional<User>getUserByName(@PathVariable String name){ return userServise.getUserByName(name);}
+
     @GetMapping("/getByEmail/{email}")
     public  Optional<User>getUserByEmail(@PathVariable String email){
         return userServise.getUserByEmail(email);

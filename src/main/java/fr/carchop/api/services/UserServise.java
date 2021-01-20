@@ -22,6 +22,7 @@ public class UserServise {
     public Optional<User> getUserbyId(Long id){
         return userDAO.findById(id);
     }
+    public Optional<User> getUserByName(String name){return userDAO.getUserByName(name);}
     public Boolean addUser(UserL user){
         try {
             User user2=new User(Long.valueOf(1),user.getName(),user.getEmail(),user.getPassword(),new ArrayList<>());

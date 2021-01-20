@@ -5,6 +5,7 @@ _________________User___________________________
 /User/get/{id} ex : /User/get/1
 /User/add
 /User/getByEmail/{email}
+/User/getUserByName/{name}
 
 _________________Cart___________________________
 
@@ -23,4 +24,4 @@ _________________Car_____________________________
 /Car/getByModel/{model}
 /Car/getByAdress/{adress}
 /Car/getAllCars
-/Car/ad
+/Car/add
