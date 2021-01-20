@@ -1,9 +1,11 @@
 package fr.carchop.api.controllers;
-
 import fr.carchop.api.models.User;
 import fr.carchop.api.models.UserL;
 import fr.carchop.api.services.UserServise;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -31,9 +33,18 @@ public class UserController {
         return userServise.getUserByEmail(email);
     }
 
-    @PostMapping("Login")
+    @PostMapping("/Login")
     public  Boolean login(@RequestBody UserL user){
-        System.out.println(user.toString());
         return userServise.login(user);
     }
+
+    @RequestMapping("/passforget/{email}/{code}")
+    public  Boolean passforget(@PathVariable String code, @PathVariable String email){
+        return userServise.passforget(code,email);
+    }
+    @RequestMapping("/changepassword/{email}/{pass}")
+    public  Boolean changepassword(@PathVariable String email, @PathVariable String pass){
+        return userServise.changepassword(email,pass);
+    }
+
 }
