@@ -30,6 +30,16 @@ public class CartService {
             return null;
         }
     }
+    public List<Car> getCarFromCartByEmal(String email){
+        Optional<User> userByEmail=userServise.getUserByEmail(email);
+        System.out.println(userByEmail.get().toString());
+        if(userByEmail.get()!=null){
+            return  cartDAO.findCartByUser(userByEmail.get()).get().getCars();
+        }
+        else {
+            return null;
+        }
+    }
     public Double gatTotalCart(Long id){
         Double d=0.;
         Optional<Cart> cart=cartDAO.findById(id);

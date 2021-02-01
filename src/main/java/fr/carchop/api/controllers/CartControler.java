@@ -33,6 +33,10 @@ public class CartControler {
     public List<Car> getCarFromCart(@PathVariable Long id_cart){
         return cartService.getCarFromCart(id_cart);
     }
+    @GetMapping("/getCarFromCartByEmal/{email}")
+    public List<Car> getCarFromCartByEmal(@PathVariable String email){
+        return cartService.getCarFromCartByEmal(email);
+    }
     @RequestMapping("/deleteCarFromCart/{email}/{id_Car}")
     public boolean deleteCarFromCart(@PathVariable String email,@PathVariable Long id_Car) {
         return cartService.deleteCarFromCart(email,id_Car);
