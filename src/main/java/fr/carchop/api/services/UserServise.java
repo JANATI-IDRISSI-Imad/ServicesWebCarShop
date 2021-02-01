@@ -113,6 +113,7 @@ public class UserServise {
             if(user.get()!=null){
                 user.get().setName(userL.getName());
                 user.get().setPassword(userL.getPassword());
+                userDAO.save(user.get());
                 return  true;
             }
         }catch (Exception e){
