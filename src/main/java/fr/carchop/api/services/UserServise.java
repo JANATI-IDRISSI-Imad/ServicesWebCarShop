@@ -96,9 +96,26 @@ public class UserServise {
             if(user.get()!=null){
                 user.get().setPassword(pass);
                 userDAO.save(user.get());
+                return true;
             }
         }
         catch (Exception e){
+
+        }
+        return false;
+    }
+
+
+
+    public  Boolean updateUser(UserL userL){
+        try {
+            Optional<User> user=getUserByEmail(userL.getEmail());
+            if(user.get()!=null){
+                user.get().setName(userL.getName());
+                user.get().setPassword(userL.getPassword());
+                return  true;
+            }
+        }catch (Exception e){
 
         }
         return false;
