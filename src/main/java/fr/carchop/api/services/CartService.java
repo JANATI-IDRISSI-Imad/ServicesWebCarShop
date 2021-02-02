@@ -40,9 +40,9 @@ public class CartService {
             return null;
         }
     }
-    public Double gatTotalCart(Long id){
+    public Double gatTotalCart(String email){
         Double d=0.;
-        Optional<Cart> cart=cartDAO.findById(id);
+        Optional<Cart> cart=getCartByUserEmail(email);
         if(cart.get()!=null){
             for (Car car : cart.get().getCars()) {
                 d=d+car.getPrice();

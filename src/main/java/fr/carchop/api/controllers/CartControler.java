@@ -20,9 +20,9 @@ public class CartControler {
     public Optional<Cart> getCartByUserEmail(@PathVariable String email){
         return cartService.getCartByUserEmail(email);
     }
-    @GetMapping("/gatTotalCart/{id}")
-    public Double gatTotalCart (@PathVariable Long id){
-        return cartService.gatTotalCart(id);
+    @GetMapping("/gatTotalCart/{email}")
+    public Double gatTotalCart (@PathVariable String email){
+        return cartService.gatTotalCart(email);
     }
     @RequestMapping("/addCarToCart/{email}/{id_Car}")
     public boolean addCarToCart(@PathVariable String email,@PathVariable Long id_Car) {
