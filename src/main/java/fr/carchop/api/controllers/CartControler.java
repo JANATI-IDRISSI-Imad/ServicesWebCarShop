@@ -49,4 +49,8 @@ public class CartControler {
     public boolean validateCart(@PathVariable String email) {
         return cartService.validateCart(email);
     }
+    @RequestMapping("/getSizeCarInCart/{email}")
+    public int getSizeCarInCart(@PathVariable String email) {
+        return cartService.getCarFromCartByEmal(email).size();
+    }
 }
