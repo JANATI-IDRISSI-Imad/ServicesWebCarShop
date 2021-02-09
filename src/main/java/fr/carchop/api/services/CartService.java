@@ -30,9 +30,19 @@ public class CartService {
             return null;
         }
     }
-    public Double gatTotalCart(Long id){
+    public List<Car> getCarFromCartByEmal(String email){
+        Optional<User> userByEmail=userServise.getUserByEmail(email);
+        System.out.println(userByEmail.get().toString());
+        if(userByEmail.get()!=null){
+            return  cartDAO.findCartByUser(userByEmail.get()).get().getCars();
+        }
+        else {
+            return null;
+        }
+    }
+    public Double gatTotalCart(String email){
         Double d=0.;
-        Optional<Cart> cart=cartDAO.findById(id);
+        Optional<Cart> cart=getCartByUserEmail(email);
         if(cart.get()!=null){
             for (Car car : cart.get().getCars()) {
                 d=d+car.getPrice();
