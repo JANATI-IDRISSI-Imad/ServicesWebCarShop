@@ -1,6 +1,5 @@
 package fr.carchop.api.controllers;
 
-import fr.carchop.api.models.Car;
 import fr.carchop.api.models.Checkout;
 import fr.carchop.api.services.CheckoutService;
 import org.springframework.beans.factory.annotation.Autowired;

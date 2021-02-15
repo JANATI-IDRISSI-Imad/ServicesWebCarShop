@@ -12,8 +12,6 @@ import java.util.Optional;
 
 @Service
 public class CheckoutService {
-    @Autowired
-    CartDAO cartDAO;
 
     @Autowired
     CheckoutDao checkoutDao;

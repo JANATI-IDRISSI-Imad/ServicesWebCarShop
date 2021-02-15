@@ -16,10 +16,6 @@ public class Checkout {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
-    @OneToOne
-    @JoinColumn(name="cart_id", nullable=false)
-    private Cart cart;
     private String fullname;
     private String adresse;
     private long zipcode;
