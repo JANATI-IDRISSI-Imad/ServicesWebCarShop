@@ -17,7 +17,7 @@ public class Checkout {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+    @OneToOne
     @JoinColumn(name="cart_id", nullable=false)
     private Cart cart;
     private String fullname;

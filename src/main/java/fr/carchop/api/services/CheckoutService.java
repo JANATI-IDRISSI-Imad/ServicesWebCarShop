@@ -3,6 +3,7 @@ package fr.carchop.api.services;
 import fr.carchop.api.models.Cart;
 import fr.carchop.api.models.Checkout;
 import fr.carchop.api.repositories.CartDAO;
+import fr.carchop.api.repositories.CheckoutDao;
 import fr.carchop.api.repositories.UserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,15 +16,9 @@ public class CheckoutService {
     CartDAO cartDAO;
 
     @Autowired
-    UserDAO userDAO;
+    CheckoutDao checkoutDao;
 
-    public Boolean addCheckout(Checkout checkout, String email) {
-        try {
-
-            return true;
-        }
-        catch (Exception e) {
-            return false;
-        }
+    public void addCheckout(Checkout checkout) {
+        checkoutDao.save(checkout);
     }
 }
