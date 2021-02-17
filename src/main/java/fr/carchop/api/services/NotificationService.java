@@ -63,7 +63,7 @@ public class NotificationService {
             SimpleMailMessage message = new SimpleMailMessage();
             message.setFrom("noreplycarshopapp@gmail.com");
             message.setTo(email);
-            message.setSubject("Réinitialiser le mot de passe");
+            message.setSubject("Merci beaucoup pour votre achat");
             message.setText(emailM);
             mailSender.send(message);
             return  true;
