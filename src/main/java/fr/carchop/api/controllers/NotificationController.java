@@ -25,4 +25,9 @@ public class NotificationController {
     public Boolean notify(@PathVariable String email){
         return notificationService.notify(email);
     }
+
+    @RequestMapping("/notifyByEmail/{email}")
+    public Boolean notifyByEmail(@PathVariable String email){
+        return notificationService.notifyByEmail(email);
+    }
 }
