@@ -22,6 +22,8 @@ public class NotificationService {
     UserServise userServise;
     @Autowired
     UserDAO userDAO;
+    @Autowired
+    CartService cartService;
     public List<Notification> getNotifByUser(String email){
        Optional<User> user = userServise.getUserByEmail(email);
        if(user.get() != null){
@@ -43,7 +45,7 @@ public class NotificationService {
 
     public boolean notifyByEmail( String email){
         try {
-
+            cartService.validateCart(email);
             String emailM="Bonjour " +"\n" +
                     "Felicitation,l'achat est bien effectue"+
                     "\n" +

@@ -5,7 +5,6 @@ import fr.carchop.api.models.Cart;
 import fr.carchop.api.models.User;
 import fr.carchop.api.repositories.CarDao;
 import fr.carchop.api.repositories.CartDAO;
-import fr.carchop.api.repositories.UserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -23,4 +23,5 @@ public class Checkout {
     private long creditcard;
     private int ccv;
     private String expdate;
+    private String email;
 }
