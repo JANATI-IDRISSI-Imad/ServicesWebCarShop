@@ -23,6 +23,5 @@ public class CheckoutController {
     public void addCheckout(@RequestBody Checkout checkout){
         cartService.validateCart(checkout.getEmail());
         checkoutService.addCheckout(checkout);
-
     }
 }

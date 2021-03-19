@@ -1,9 +1,9 @@
 package fr.carchop.api.repositories;
 
-import fr.carchop.api.models.Checkout;
+import fr.carchop.api.models.Message;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CheckoutDao extends CrudRepository<Checkout, Long> {
+public interface MessageDao extends CrudRepository<Message, Long> {
 }
