@@ -18,10 +18,12 @@ public class User {
     private String name;
     private String email;
     private String password;
+    private String adress;
     public long getId() {
         return id;
     }
     @OneToMany(cascade = {CascadeType.ALL})
     public List<Notification> notification;
+
 
 }

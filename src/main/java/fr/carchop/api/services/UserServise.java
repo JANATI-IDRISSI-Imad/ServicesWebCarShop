@@ -28,7 +28,7 @@ public class UserServise {
     public Optional<User> getUserByName(String name){return userDAO.getUserByName(name);}
     public Boolean addUser(UserL user){
         try {
-            User user2=new User(Long.valueOf(1),user.getName(),user.getEmail(),user.getPassword(),new ArrayList<>());
+            User user2=new User(Long.valueOf(1),user.getName(),user.getEmail(),user.getPassword(),user.getAdress(), new ArrayList<>());
             userDAO.save(user2);
             Optional<User> user1=getUserByEmail(user.getEmail());
             Cart cart=new Cart(0,user1.get(),new ArrayList<>());
@@ -113,6 +113,7 @@ public class UserServise {
             if(user.get()!=null){
                 user.get().setName(userL.getName());
                 user.get().setPassword(userL.getPassword());
+               // user.get().setAdress(userL.getAdress());
                 userDAO.save(user.get());
                 return  true;
             }
