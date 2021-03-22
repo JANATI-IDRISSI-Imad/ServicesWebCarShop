@@ -26,10 +26,10 @@ public class UserServise {
         return userDAO.findById(id);
     }
     public Optional<User> getUserByName(String name){return userDAO.getUserByName(name);}
-    public Boolean addUser(UserL user){
+    public Boolean addUser(User user){
         try {
-            User user2=new User(Long.valueOf(1),user.getName(),user.getEmail(),user.getPassword(),new ArrayList<>());
-            userDAO.save(user2);
+            user.setNotification(new ArrayList<>());
+            userDAO.save(user);
             Optional<User> user1=getUserByEmail(user.getEmail());
             Cart cart=new Cart(0,user1.get(),new ArrayList<>());
             cartDao.save(cart);

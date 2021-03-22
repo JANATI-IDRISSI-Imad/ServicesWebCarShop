@@ -23,7 +23,7 @@ public class UserController {
     }
 
     @PostMapping("/add")
-    public Boolean addUser(@RequestBody UserL user) {
+    public Boolean addUser(@RequestBody User user) {
         return userServise.addUser(user);
     }
 
