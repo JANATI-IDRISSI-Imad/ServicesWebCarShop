@@ -4,10 +4,7 @@ import fr.carchop.api.models.Checkout;
 import fr.carchop.api.models.Message;
 import fr.carchop.api.services.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class MessageController {
@@ -17,5 +14,9 @@ public class MessageController {
     @PostMapping("/ContactUs")
     public void addCheckout(@RequestBody Message message){
         messageService.saveMessage(message);
+    }
+    @GetMapping("t")
+    public void test(){
+        messageService.test("imad.janati.idrissi@gmail.com");
     }
 }
