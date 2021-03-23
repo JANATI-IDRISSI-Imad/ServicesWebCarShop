@@ -20,7 +20,7 @@ public class Checkout {
     private String adresse;
     private long zipcode;
     private String city;
-    private long creditcard;
+    private String creditcard;
     private int ccv;
     private String expdate;
     private String email;
