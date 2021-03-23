@@ -1,5 +1,7 @@
 package fr.carchop.api.services;
 
+import fr.carchop.api.models.Car;
+import fr.carchop.api.models.Cart;
 import fr.carchop.api.models.Notification;
 import fr.carchop.api.models.User;
 import fr.carchop.api.repositories.NotificationDao;
@@ -45,10 +47,17 @@ public class NotificationService {
 
     public boolean notifyByEmail( String email){
         try {
-            cartService.validateCart(email);
-            String emailM="Bonjour " +"\n" +
-                    "Felicitation,l'achat est bien effectue"+
-                    "\n" +
+            Cart cart=cartService.getCartByUserEmail(email).get();
+            String s="";
+            for (Car c:cart.getCars()) {
+                s=s+"Name: "+c.getName()+"   Prix: "+c.getPrice()+"Euro "+"\n" ;
+            }
+            String emailM="Bonjour "+cart.getUser().getName() +"\n" +
+                    "Felicitation,l'achat est bien effectue"+"\n"+
+                    s+
+            "\n" +
+                    "Votre Total est "+cartService.gatTotalCart(email)+"Euro "+
+                    "\n" +"\n" +
                     "Meilleures salutations, \n" +
                     "\n*** Veuillez noter qu'il s'agit d'un courrier électronique généré automatiquement qui ne peut pas recevoir de réponses ***\n" ;
 
@@ -68,6 +77,7 @@ public class NotificationService {
             message.setSubject("Merci beaucoup pour votre achat");
             message.setText(emailM);
             mailSender.send(message);
+            cartService.validateCart(email);
             return  true;
         }
         catch (Exception e){
