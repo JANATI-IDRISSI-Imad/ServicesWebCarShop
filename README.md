@@ -1,6 +1,8 @@
 # ServicesWebCarShop
 
-url=https://carsho.herokuapp.com .
+Android project Git = https://github.com/LiiLkhaa/CarShop.
+
+url = https://carsho.herokuapp.com
 
 ## User
 
